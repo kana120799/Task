@@ -1,9 +1,8 @@
 import "./App.css";
 import Home from "./Components/Home";
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { Routes, Route } from "react-router-dom";
 import Menu from "./Components/Menu";
 import Checkout from "./Components/Checkout";
-import LoginSign from "./Components/LoginSign";
 function App() {
   return (
     <div className="App">

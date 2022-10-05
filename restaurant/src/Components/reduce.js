@@ -1,6 +1,5 @@
 export const reduce = (state, action) => {
   if (action.type === "INC") {
-    console.log(state.item);
     const updateState = state.item.map((ele, ind) => {
       if (ele.id === action.payload) {
         return { ...ele, total: ++ele.total, cost: ele.price * ele.total };
@@ -24,7 +23,6 @@ export const reduce = (state, action) => {
         return ele;
       }
     });
-    console.log("udate===>", updateTotalItem);
 
     return {
       ...state,
