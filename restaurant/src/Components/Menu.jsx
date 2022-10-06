@@ -12,19 +12,19 @@ function Menu() {
   };
 
   let [state, dispatch] = useReducer(reduce, initialState);
-  function increment(id) {
+  const increment = (id) => {
     return dispatch({
       type: "INC",
       payload: id,
     });
-  }
+  };
 
-  function decrement(id) {
+  const decrement = (id) => {
     return dispatch({
       type: "DEC",
       payload: id,
     });
-  }
+  };
 
   useEffect(() => {
     dispatch({
@@ -88,7 +88,7 @@ function Menu() {
                     display: "inline-block",
                     marginLeft: "10px",
                     boxShadow: "0px 1.5px 2px 1px rgba(0, 0, 0, 0.3)",
-                    backgroundColor: "#F50057",
+                    backgroundColor: "#F70C08",
                   }}
                 >
                   -

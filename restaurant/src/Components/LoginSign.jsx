@@ -1,7 +1,8 @@
 import React, { useState } from "react";
+import { useNavigate } from "react-router-dom";
 import styles from "./CSS/LoginSign.module.css";
 function LoginSign(props) {
-  let [switchAccount, setAccount] = useState(true);
+  let [switchAccount, setAccount] = useState(false);
   const changeAccount = (e) => {
     e.preventDefault();
     props.account1(false);
@@ -10,9 +11,33 @@ function LoginSign(props) {
   function cancelCall() {
     props.account1(false);
   }
+  //                          USer DATA
+  var loginuser = {
+    email: "",
+    password: "",
+  };
+  var signuser = {
+    name: "",
+    email: "",
+    password: "",
+  };
+
+  let [loginstate, setLoginstate] = useState(loginuser);
+  let [signstate, setSignstate] = useState(signuser);
+  const onValueChange = (e) => {
+    setSignstate({ ...signstate, [e.target.name]: e.target.value });
+    console.log(signstate);
+  };
+  const onValueTake = (e) => {
+    setLoginstate({ ...loginstate, [e.target.name]: e.target.value });
+  };
+  // Navigate
+  const navigate = useNavigate();
   return (
     <>
       {switchAccount ? (
+        ////////////////////                                      Login          /////////////////////////
+
         <div className={styles.loginFlex}>
           <div className={styles.loginBox}>
             <h2
@@ -23,7 +48,7 @@ function LoginSign(props) {
                 alignItems: "center",
               }}
             >
-              Login Form
+              Login
             </h2>
             <form>
               <div className={styles.container}>
@@ -31,10 +56,13 @@ function LoginSign(props) {
                   <b>Email</b>
                 </label>
                 <input
-                  type="text"
+                  type="email"
+                  name="email"
                   id="username"
                   placeholder="Enter Email"
-                  required
+                  onChange={(e) => {
+                    onValueTake(e);
+                  }}
                 />
 
                 <label htmlFor="password">
@@ -42,12 +70,23 @@ function LoginSign(props) {
                 </label>
                 <input
                   type="password"
+                  name="password"
                   id="password"
                   placeholder="Enter Password"
+                  onChange={(e) => {
+                    onValueTake(e);
+                  }}
                   requirednewAccount
                 />
 
-                <button type="submit">Login</button>
+                <button
+                  type="submit"
+                  onClick={() => {
+                    navigate("/home");
+                  }}
+                >
+                  Login
+                </button>
               </div>
 
               <div className={styles.container1}>
@@ -60,13 +99,7 @@ function LoginSign(props) {
                 </button>
                 <span className={styles.newAccount}>
                   <h4>
-                    <a
-                      href="#"
-                      onClick={() => {
-                        setAccount(false);
-                      }}
-                      style={{ textDecoration: "none" }}
-                    >
+                    <a href="#" style={{ textDecoration: "none" }}>
                       Create new account
                     </a>
                   </h4>
@@ -76,6 +109,7 @@ function LoginSign(props) {
           </div>
         </div>
       ) : (
+        ////////////////////                                      Registration          /////////////////////////
         <div className={styles.loginFlex}>
           <div className={styles.registerBox}>
             <form onSubmit={changeAccount}>
@@ -88,18 +122,8 @@ function LoginSign(props) {
                     alignItems: "center",
                   }}
                 >
-                  Register
+                  Sign Up
                 </h1>
-                <label htmlFor="email">
-                  <b>Username</b>
-                </label>
-                <input
-                  type="text"
-                  placeholder="Enter Username"
-                  name="username"
-                  id="username"
-                  required
-                />
 
                 <label htmlFor="email">
                   <b>Full Name</b>
@@ -109,7 +133,9 @@ function LoginSign(props) {
                   placeholder="Enter Full Name"
                   name="name"
                   id="name"
-                  required
+                  onChange={(e) => {
+                    onValueChange(e);
+                  }}
                 />
 
                 <label htmlFor="psw">
@@ -120,7 +146,9 @@ function LoginSign(props) {
                   placeholder="Enter Email"
                   name="email"
                   id="email"
-                  required
+                  onChange={(e) => {
+                    onValueChange(e);
+                  }}
                 />
 
                 <label htmlFor="psw-repeat">
@@ -131,11 +159,19 @@ function LoginSign(props) {
                   placeholder=" Password"
                   name="password"
                   id="password"
-                  required
+                  onChange={(e) => {
+                    onValueChange(e);
+                  }}
                 />
                 <hr />
 
-                <button type="submit" className={styles.registerbtn}>
+                <button
+                  type="submit"
+                  className={styles.registerbtn}
+                  onClick={() => {
+                    setAccount(true);
+                  }}
+                >
                   Register
                 </button>
               </div>

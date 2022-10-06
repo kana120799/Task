@@ -37,7 +37,6 @@ button:hover {
   padding: 5px 20px;
 }
 .container1 {
-  /* padding: 5px 20px; */
   display: flex;
   justify-content: space-around;
 }
@@ -52,7 +51,7 @@ button:hover {
   position: absolute;
   display: flex;
   background-color: rgba(0, 0, 0, 0.8);
-  padding-top: 30px;
+  padding-top: 70px;
   justify-content: center;
   height: 100%;
   width: 100%;
