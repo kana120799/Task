@@ -74,6 +74,8 @@ function Menu() {
                     display: "inline-block",
                     boxShadow: "0px 1.5px 2px 1px rgba(0, 0, 0, 0.3)",
                     backgroundColor: "#303F9F",
+                    padding: 0,
+                    fontSize: "larger",
                   }}
                 >
                   +
@@ -88,7 +90,10 @@ function Menu() {
                     display: "inline-block",
                     marginLeft: "10px",
                     boxShadow: "0px 1.5px 2px 1px rgba(0, 0, 0, 0.3)",
-                    backgroundColor: "#F70C08",
+                    backgroundColor: "#D7DBDD",
+                    color: "#626567",
+                    padding: 0,
+                    fontSize: "larger",
                   }}
                 >
                   -

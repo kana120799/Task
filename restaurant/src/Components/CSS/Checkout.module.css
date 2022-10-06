@@ -63,8 +63,10 @@
   height: 35px;
   margin-left: 10px;
   box-shadow: 0px 1.5px 2px 1px rgba(0, 0, 0, 0.3);
-  background: #F70C08;
-  padding-top: 9px;
+  background-color: #d7dbdd;
+  color: #626567;
+  font-size: larger;
+  padding: 0;
 }
 @media (max-width: 969px) {
   .checkout {
@@ -108,9 +110,12 @@
     height: 35px;
     margin-left: 10px;
     box-shadow: 0px 1.5px 2px 1px rgba(0, 0, 0, 0.3);
-    background: #F70C08;
-    padding-top: 9px;
+    background: #f70c08;
     margin-right: 15px;
+    background-color: #d7dbdd;
+    color: #626567;
+    padding: 0;
+    font-size: larger;
   }
 }
 @media (max-width: 490px) {
