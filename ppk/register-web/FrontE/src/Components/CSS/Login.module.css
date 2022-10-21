@@ -1,0 +1,74 @@
+form {
+  border: 2px solid #f1f1f1;
+}
+
+input[type="text"],
+input[type="tel"],
+input[type="email"] {
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  box-sizing: border-box;
+}
+
+button {
+  background-color: #04aa6d;
+  color: white;
+  padding: 14px 20px;
+  margin: 8px 0;
+  border: none;
+  cursor: pointer;
+  width: 100%;
+}
+
+button:hover {
+  opacity: 0.8;
+}
+
+.container {
+  padding: 5px 20px;
+}
+
+.loginFlex {
+  position: absolute;
+  display: flex;
+  background-color: rgba(0, 0, 0, 0.8);
+  padding-top: 80px;
+  justify-content: center;
+  height: 100%;
+  width: 100%;
+  z-index: 99;
+}
+
+.registerBox {
+  position: relative;
+  z-index: 99;
+  color: black;
+  background-color: #fff;
+  height: 425px;
+  width: 400px;
+}
+
+@media (max-width: 468px) {
+  .loginFlex {
+    position: absolute;
+    display: flex;
+    background-color: rgba(0, 0, 0, 0.8);
+    padding-top: 30px;
+    justify-content: center;
+    height: 100%;
+    width: 100%;
+    z-index: 99;
+  }
+
+  .registerBox {
+    position: relative;
+    z-index: 99;
+    color: black;
+    background-color: #fff;
+    height: 420px;
+    width: 360px;
+  }
+}

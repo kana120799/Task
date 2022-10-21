@@ -1,0 +1,33 @@
+.navflex {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 50px;
+  background-color: #fff;
+}
+.navLeft {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding-left: 20px;
+}
+.navRight {
+  display: flex;
+  width: 250px;
+  align-items: center;
+  justify-content: center;
+  padding-right: 20px;
+}
+
+.navImage {
+  width: 25px;
+  height: 25px;
+  border-radius: 50%;
+  padding-top: 2px;
+}
+.navSubRight {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-left: 8px;
+}
