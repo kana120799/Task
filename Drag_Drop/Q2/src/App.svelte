@@ -151,6 +151,9 @@
   .container {
     margin-top: 55px;
   }
+  .main1 {
+    cursor: grab;
+  }
 
   .companylogo {
     height: 30px;
